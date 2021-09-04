@@ -1,25 +1,15 @@
-import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
+import Overall from "./components/Overall";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Overall />
+    </>
   );
 }
 
 export default App;
+
+// https://disease.sh/v3/covid-19/countries/ind
