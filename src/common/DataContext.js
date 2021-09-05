@@ -11,10 +11,6 @@ export const DataProvider = (props) => {
   );
 };
 
-// export const useData = () => {
-//   return React.useContext(DataContext);
-// };
-
 const useProvideData = () => {
   const [countryData, setCountryData] = React.useState();
   const [historyData, setHistoryData] = React.useState();

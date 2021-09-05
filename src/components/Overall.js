@@ -36,13 +36,24 @@ function Overall() {
 
   useEffect(() => {
     getData();
-    getPath(600);
+    getPath(500);
   }, []);
 
   useEffect(() => {
     if (confirmCases.length <= 0) return;
     if (recoverCases.length <= 0) return;
     if (deathCases.length <= 0) return;
+
+    const activeArray = () => {
+      let res = [];
+      for (let i = 0; i < confirmCases.length - 60; i++) {
+        res.push([
+          confirmCases[i][0],
+          confirmCases[i][1] - recoverCases[i][1] - deathCases[i][1],
+        ]);
+      }
+      return res;
+    };
 
     const xScale = d3.scaleTime().clamp(true).range([0, width]);
     const yScale = d3.scaleLinear().clamp(true).range([height, 0]);
@@ -90,6 +101,7 @@ function Overall() {
     }
 
     miniPath("confirmMap", confirmCases, yScale, transition, "#ff073a99");
+    miniPath("activeMap", activeArray(), yScale, transition, "#007bff99");
     miniPath("recoverMap", recoverCases, yScale, transition, "#28a74599");
     miniPath("deathMap", deathCases, yScale, transition, "#6c757d99");
   }, [historyData]);
@@ -98,6 +110,10 @@ function Overall() {
     <Container>
       <Top>
         <h1>{countryData ? countryData.country : ""}</h1>
+        <p>
+          Last Updated at{" "}
+          {countryData ? new Date(countryData.updated).toString() : ""}
+        </p>
       </Top>
       <CardContainer>
         <Card
@@ -150,16 +166,17 @@ function Overall() {
 export default Overall;
 
 const Container = styled.div`
+  position: relative;
   display: block;
-  padding: 100px 40px;
-  min-width: 50%;
+  margin: auto;
+  /* min-width: 50% */
   @media (max-width: 800px) {
-    width: 100%;
-    padding: 100px 40px;
+    width: 90%;
   }
 `;
 
 const Top = styled.div`
+  position: relative;
   h1 {
     width: max-content;
     padding: 4px 8px;
@@ -169,9 +186,17 @@ const Top = styled.div`
     color: #e23028;
     border-radius: 4px;
   }
+
+  p {
+    color: #6c757d;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    font-size: 12px !important;
+  }
 `;
 
 const CardContainer = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -183,6 +208,7 @@ const CardContainer = styled.div`
 `;
 
 const Card = styled.div`
+  position: relative;
   display: flex;
   width: 40%;
   flex-direction: column;
