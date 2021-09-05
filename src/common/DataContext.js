@@ -18,7 +18,6 @@ export const DataProvider = (props) => {
 const useProvideData = () => {
   const [countryData, setCountryData] = React.useState();
   const [historyData, setHistoryData] = React.useState();
-  // const [fullPath, setPullPath] = React.useState();
 
   const getData = async () => {
     await axios
@@ -44,25 +43,12 @@ const useProvideData = () => {
 
   const getPath = async (days) => {
     await getHistoryData(days);
-
-    const confirmKeys = historyData
-      ? Object.keys(historyData.timeline.cases)
-      : [];
-    const confirmvalues = historyData
-      ? Object.values(historyData.timeline.cases)
-      : [];
   };
-
-  React.useEffect(() => {
-    getPath(400);
-  }, []);
-
-  // console.log(confirmKeys, confirmvalues);
-  console.log(historyData ? Object.keys(historyData.timeline.cases) : []);
 
   return {
     getData,
     countryData,
     getPath,
+    historyData,
   };
 };
