@@ -1,0 +1,146 @@
+{
+  "Andaman and Nicobar Islands": {
+    "long": 92.83165406414926,
+    "lat": 12.61123865
+  },
+  "Andhra Pradesh": {
+    "long": 80.1863809,
+    "lat": 15.9240905
+  },
+  "Arunachal Pradesh": {
+    "long": 94.5921326,
+    "lat": 28.0937702
+  },
+  "Assam": {
+    "long": 93.2551303,
+    "lat": 26.4073841
+  },
+  "Bihar": {
+    "long": 85.906508,
+    "lat": 25.6440845
+  },
+  "Chandigarh": {
+    "long": 76.78414567016054,
+    "lat": 30.72984395
+  },
+  "Chhattisgarh": {
+    "long": 81.8406351,
+    "lat": 21.6637359
+  },
+  "Dadra and Nagar Haveli and Daman and Diu": {
+    "long": 70.93238341010638,
+    "lat": 20.718174949999998
+  },
+  "Delhi": {
+    "long": 77.1716954,
+    "lat": 28.6273928
+  },
+  "Goa": {
+    "long": 74.0855134,
+    "lat": 15.3004543
+  },
+  "Gujarat": {
+    "long": 71.745261,
+    "lat": 22.3850051
+  },
+  "Haryana": {
+    "long": 76,
+    "lat": 29
+  },
+  "Himachal Pradesh": {
+    "long": 77.1828462,
+    "lat": 31.9292352
+  },
+  "Jammu and Kashmir": {
+    "long": 75.1629584,
+    "lat": 33.6649297
+  },
+  "Jharkhand": {
+    "long": 85.2557301,
+    "lat": 23.4559809
+  },
+  "Karnataka": {
+    "long": 75.7223521,
+    "lat": 14.5203896
+  },
+  "Kerala": {
+    "long": 76.5120396,
+    "lat": 10.3528744
+  },
+  "Ladakh": {
+    "long": 77.6568576,
+    "lat": 33.9456407
+  },
+  "Lakshadweep": {
+    "long": 73.6804620941119,
+    "lat": 10.8132489
+  },
+  "Madhya Pradesh": {
+    "long": 77.5340719,
+    "lat": 23.8143419
+  },
+  "Maharashtra": {
+    "long": 75.6741579,
+    "lat": 18.9068356
+  },
+  "Manipur": {
+    "long": 93.9229386,
+    "lat": 24.7208818
+  },
+  "Meghalaya": {
+    "long": 91.2999102,
+    "lat": 25.5379432
+  },
+  "Mizoram": {
+    "long": 92.8687612,
+    "lat": 23.2146169
+  },
+  "Nagaland": {
+    "long": 94.5884911,
+    "lat": 26.1630556
+  },
+  "Odisha": {
+    "long": 84.6897321,
+    "lat": 20.5431241
+  },
+  "Puducherry": {
+    "long": 79.8306447,
+    "lat": 11.9340568
+  },
+  "Punjab": {
+    "long": 75.5004841,
+    "lat": 30.9293211
+  },
+  "Rajasthan": {
+    "long": 73.7684549,
+    "lat": 26.8105777
+  },
+  "Sikkim": {
+    "long": 88.45413638680145,
+    "lat": 27.601029
+  },
+  "Tamil Nadu": {
+    "long": 78.3665347,
+    "lat": 10.9094334
+  },
+  "Telangana": {
+    "long": 79.1151663,
+    "lat": 17.8495919
+  },
+  "Tripura": {
+    "long": 91.7025091,
+    "lat": 23.7750823
+  },
+  "Uttarakhand": {
+    "long": 79.089691,
+    "lat": 30.0417376
+  },
+  "Uttar Pradesh": {
+    "long": 80.859666,
+    "lat": 27.1303344
+  },
+  "West Bengal": {
+    "long": 87.6855882,
+    "lat": 22.9964948
+  }
+}

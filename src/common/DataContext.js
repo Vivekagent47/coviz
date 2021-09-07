@@ -14,6 +14,7 @@ export const DataProvider = (props) => {
 const useProvideData = () => {
   const [countryData, setCountryData] = React.useState();
   const [historyData, setHistoryData] = React.useState();
+  const [geoIndiaJSON, setIndiaJSON] = React.useState();
 
   const getData = async () => {
     await axios
@@ -41,10 +42,27 @@ const useProvideData = () => {
     await getHistoryData(days);
   };
 
+  const geoIndia = async () => {
+    try {
+      await axios
+        .get(
+          "https://raw.githubusercontent.com/HindustanTimesLabs/shapefiles/master/india/state_ut/india_state.json"
+        )
+        .then((res) => {
+          const resData = res.data;
+          setIndiaJSON(resData);
+        });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return {
     getData,
     countryData,
     getPath,
     historyData,
+    geoIndia,
+    geoIndiaJSON,
   };
 };

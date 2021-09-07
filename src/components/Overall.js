@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { DataContext } from "../common/DataContext";
 import * as d3 from "d3";
+import IndiaMap from "./IndiaMap";
 
 function Overall() {
   const { getData, countryData, getPath, historyData } =
@@ -159,6 +160,7 @@ function Overall() {
           <div className="deathMap"></div>
         </Card>
       </CardContainer>
+      <IndiaMap activeState={activeCard} />
     </Container>
   );
 }
@@ -169,7 +171,6 @@ const Container = styled.div`
   position: relative;
   display: block;
   margin: auto;
-  /* min-width: 50% */
   @media (max-width: 800px) {
     width: 90%;
   }
@@ -203,7 +204,7 @@ const CardContainer = styled.div`
   margin: 20px 0;
   @media (max-width: 800px) {
     flex-wrap: wrap;
-    justify-content: center;
+    /* justify-content: space-between; */
   }
 `;
 
@@ -257,9 +258,6 @@ const Card = styled.div`
         : "rgba(108, 117, 125, 0.125)"};
     transition: 0.15s ease-in-out;
   }
-  @media (max-width: 540px) {
-    width: 100%;
-  }
   &:hover {
     background: ${(props) =>
       props.type === "confirm"
@@ -269,5 +267,9 @@ const Card = styled.div`
         : props.type === "recover"
         ? "rgba(40, 167, 69, 0.125)"
         : "rgba(108, 117, 125, 0.125)"};
+  }
+
+  @media (max-width: 640px) {
+    width: 100%;
   }
 `;
