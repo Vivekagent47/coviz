@@ -123,7 +123,9 @@ function Overall() {
           type="confirm"
         >
           <h6>Confirmed</h6>
-          <h1>{countryData ? countryData.cases.toLocaleString("en-IN") : 0}</h1>
+          <h1>
+            {countryData ? countryData.total.cases.toLocaleString("en-IN") : 0}
+          </h1>
           <div className="confirmMap"></div>
         </Card>
         <Card
@@ -133,7 +135,7 @@ function Overall() {
         >
           <h6>Active</h6>
           <h1>
-            {countryData ? countryData.active.toLocaleString("en-IN") : 0}
+            {countryData ? countryData.total.active.toLocaleString("en-IN") : 0}
           </h1>
           <div className="activeMap"></div>
         </Card>
@@ -144,7 +146,9 @@ function Overall() {
         >
           <h6>Recovered</h6>
           <h1>
-            {countryData ? countryData.recovered.toLocaleString("en-IN") : 0}
+            {countryData
+              ? countryData.total.recovered.toLocaleString("en-IN")
+              : 0}
           </h1>
           <div className="recoverMap"></div>
         </Card>
@@ -155,7 +159,7 @@ function Overall() {
         >
           <h6>Deaths</h6>
           <h1>
-            {countryData ? countryData.deaths.toLocaleString("en-IN") : 0}
+            {countryData ? countryData.total.deaths.toLocaleString("en-IN") : 0}
           </h1>
           <div className="deathMap"></div>
         </Card>

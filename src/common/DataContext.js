@@ -17,12 +17,10 @@ const useProvideData = () => {
   const [geoIndiaJSON, setIndiaJSON] = React.useState();
 
   const getData = async () => {
-    await axios
-      .get("https://disease.sh/v3/covid-19/countries/ind")
-      .then((res) => {
-        const resData = res.data;
-        setCountryData(resData);
-      });
+    await axios.get("https://disease.sh/v3/covid-19/gov/india").then((res) => {
+      const resData = res.data;
+      setCountryData(resData);
+    });
   };
 
   const getHistoryData = async (days) => {
@@ -56,6 +54,19 @@ const useProvideData = () => {
       console.log(e);
     }
   };
+
+  // const getAllStateData = async () => {
+  //   try {
+  //     await axios
+  //       .get("https://disease.sh/v3/covid-19/gov/india")
+  //       .then((res) => {
+  //         const resData = res.data;
+  //         setIndiaJSON(resData);
+  //       });
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
 
   return {
     getData,

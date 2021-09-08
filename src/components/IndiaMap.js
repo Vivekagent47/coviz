@@ -5,7 +5,7 @@ import styled from "styled-components";
 import StateCord from "../common/StateCord/State.json";
 
 const IndiaMap = ({ activeState }) => {
-  const { geoIndia, geoIndiaJSON } = useContext(DataContext);
+  const { geoIndia, geoIndiaJSON, countryData } = useContext(DataContext);
   const width = 1000;
   const height = 1000;
 
@@ -15,6 +15,7 @@ const IndiaMap = ({ activeState }) => {
 
   useEffect(() => {
     if (geoIndiaJSON === undefined) return;
+    if (countryData === undefined) return;
 
     function tweenDash() {
       const l = this.getTotalLength(),
@@ -44,6 +45,15 @@ const IndiaMap = ({ activeState }) => {
         ? "#28a74599"
         : "#007bff99";
 
+    const mapState =
+      activeState === "confirm"
+        ? "cases"
+        : activeState === "death"
+        ? "deaths"
+        : activeState === "recover"
+        ? "recovered"
+        : "active";
+
     const svg = d3
       .select(".indiaMap")
       .append("svg")
@@ -66,30 +76,27 @@ const IndiaMap = ({ activeState }) => {
 
     svg
       .selectAll("circle")
-      .data([1])
+      .data(countryData.states)
       .enter()
       .append("circle")
       .attr(
         "cx",
-        (d) =>
-          projection([
-            StateCord["West Bengal"].long,
-            StateCord["West Bengal"].lat,
-          ])[0]
+        (d) => projection([StateCord[d.state].long, StateCord[d.state].lat])[0]
       )
       .attr(
         "cy",
-        (d) =>
-          projection([
-            StateCord["West Bengal"].long,
-            StateCord["West Bengal"].lat,
-          ])[1]
+        (d) => projection([StateCord[d.state].long, StateCord[d.state].lat])[1]
       )
-      .attr("r", 15.24917 * 4)
-      .style("fill", "#fff");
+      .attr("r", (d) => {
+        if (d[mapState] / 100000 < 10) return 30;
+        else if (d[mapState] / 100000 < 50) return 60;
+        else return d[mapState] / 100000 + 25;
+      })
+      .style("fill", mapColor)
+      .attr("stroke", mapColor)
+      .attr("stroke-width", 2)
+      .attr("fill-opacity", 0.4);
   }, [geoIndiaJSON, activeState]);
-
-  console.log(geoIndiaJSON);
 
   return (
     <Container>
