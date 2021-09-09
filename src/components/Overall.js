@@ -83,6 +83,8 @@ function Overall() {
     }
 
     function miniPath(map, data, yScale, transition, stockColor) {
+      d3.select(`.${map} > svg`).remove();
+
       let svg = d3
         .select(`.${map}`)
         .append("svg")
@@ -110,7 +112,7 @@ function Overall() {
   return (
     <Container>
       <Top>
-        <h1>{countryData ? countryData.country : ""}</h1>
+        <h1>India</h1>
         <p>
           Last Updated at{" "}
           {countryData ? new Date(countryData.updated).toString() : ""}

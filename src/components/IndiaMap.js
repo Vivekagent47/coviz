@@ -9,6 +9,8 @@ const IndiaMap = ({ activeState }) => {
   const width = 1000;
   const height = 1000;
 
+  const [hoverVal, setHoverVal] = React.useState({});
+
   useEffect(() => {
     geoIndia();
   }, []);
@@ -16,6 +18,8 @@ const IndiaMap = ({ activeState }) => {
   useEffect(() => {
     if (geoIndiaJSON === undefined) return;
     if (countryData === undefined) return;
+
+    d3.select(".indiaMap > svg").remove();
 
     function tweenDash() {
       const l = this.getTotalLength(),
@@ -35,7 +39,6 @@ const IndiaMap = ({ activeState }) => {
         });
     }
 
-    d3.select(".indiaMap > svg").remove();
     const mapColor =
       activeState === "confirm"
         ? "#ff073a99"
@@ -74,11 +77,15 @@ const IndiaMap = ({ activeState }) => {
       .attr("stroke", mapColor)
       .call(transition);
 
+    const maxval = d3.max(countryData.states, (d) => d[mapState]);
+    const rad = d3.scaleSqrt().domain([0, maxval]).range([30, 100]);
+
     svg
       .selectAll("circle")
       .data(countryData.states)
       .enter()
       .append("circle")
+      .attr("class", "mapBubble")
       .attr(
         "cx",
         (d) => projection([StateCord[d.state].long, StateCord[d.state].lat])[0]
@@ -87,16 +94,22 @@ const IndiaMap = ({ activeState }) => {
         "cy",
         (d) => projection([StateCord[d.state].long, StateCord[d.state].lat])[1]
       )
-      .attr("r", (d) => {
-        if (d[mapState] / 100000 < 10) return 30;
-        else if (d[mapState] / 100000 < 50) return 60;
-        else return d[mapState] / 100000 + 25;
-      })
       .style("fill", mapColor)
       .attr("stroke", mapColor)
       .attr("stroke-width", 2)
       .attr("fill-opacity", 0.4);
+
+    d3.selectAll(".mapBubble")
+      .attr("r", 0)
+      .transition()
+      .delay(10)
+      .duration(3000)
+      .attr("r", (d) => rad(d[mapState]));
+
+    d3.selectAll(".mapBubble").on("mouseenter", (event, d) => setHoverVal(d));
   }, [geoIndiaJSON, activeState]);
+
+  console.log(hoverVal);
 
   return (
     <Container>
