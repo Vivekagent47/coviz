@@ -1,6 +1,5 @@
 import React from "react";
 import Landing from "./Landing";
-import Footer from "./Footer";
 
 import Container from "@material-ui/core/Container";
 import AppBar from "@material-ui/core/AppBar";
@@ -119,7 +118,6 @@ function App() {
               <Container className={classes.content} maxWidth="lg">
                 <Landing />
               </Container>
-              <Footer />
             </div>
           </ThemeProvider>
         </HistoricalDataProvider>

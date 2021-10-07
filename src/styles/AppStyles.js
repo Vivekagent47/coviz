@@ -18,12 +18,4 @@ export default makeStyles((theme) => ({
     },
     paddingBottom: 100,
   },
-  footer: {
-    top: "auto",
-    bottom: 0,
-  },
-  footerIcons: {
-    display: "flex",
-    justifyContent: "space-between",
-  },
 }));
