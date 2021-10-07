@@ -1,35 +1,107 @@
-# Getting Started with Create React App
+# Covid-19 tracker for India
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Track current and historical covid-19 data of India and its states and union territories.
+
+## Demo
+
+<img src="/.github/demo.gif" width="100%">
+
+## Features -
+
+- #### Interactive map
+
+  A map of India where user can hover over any state or UT and the information gets displayed
+
+- #### Dark mode
+
+  Because its awesome
+
+- #### Graphs to display historical data
+
+  Graphs to display daily or cumulative data for confirmed, recovered and deceased cases of the chosen state/UT or all of India. The span of the data can be selected for 1 month, 3 months or all data since the beginning. These span durations are easily customizable if you wish the edit them in the code.
+
+- #### Sorted Data table
+  A simple table that can be sorted by any column
+
+## Run project on your computer
+
+- clone the repo
+
+```
+git clone <url>
+```
+
+- install dependencies and start development server
+
+```
+npm install
+npm start
+```
+
+- Build and run production app
+
+```
+npm run build
+npm install -g server
+serve -s build
+```
+
+---
+
+## Tech used to build this project
+
+<table>
+  <tr>
+    <td align="center"> <img align="center" src="/.github/icons/react.png" alt="react logo" width="100" /></td>
+		<td align="center"> <img align="center" src="/.github/icons/chartjs.svg" alt="chart.js logo" width="100" /></td>	
+		<td align="center"> <img align="center" src="/.github/icons/materialui.svg" alt="material-ui logo" width="100" /></td>
+   <tr>
+      <td align="center"><b> React </b></td>
+			<td align="center"><b> Chart.js </b></td>
+			<td align="center"><b> Material-UI </b></td>
+  </tr>
+</table>
+
+---
+
+## License
+
+![GitHub](https://img.shields.io/github/license/BhavyaCodes/covid-tracker-material-ui-react?style=for-the-badge)
+
+---
+
+### Leave a ⭐️ if you liked this project 😄
+
+<!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+### `npm start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
+The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `yarn test`
+### `npm test`
 
-Launches the test runner in the interactive watch mode.\
+Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+### `npm run build`
 
-Builds the app for production to the `build` folder.\
+Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
+The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
@@ -47,24 +119,24 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
 ### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
 ### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
 ### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `yarn build` fails to minify
+### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify -->
