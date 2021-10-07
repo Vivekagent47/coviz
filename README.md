@@ -64,12 +64,6 @@ serve -s build
 
 ---
 
-## License
-
-![GitHub](https://img.shields.io/github/license/BhavyaCodes/covid-tracker-material-ui-react?style=for-the-badge)
-
----
-
 ### Leave a ⭐️ if you liked this project 😄
 
 <!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
